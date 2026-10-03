@@ -84,6 +84,26 @@ app.get('/students/search', (req, res) => {
   );
 });
 
+// Delete student
+app.post('/students/delete/:id', (req, res) => {
+    const id = Number.parseInt(req.params.id, 10);
+  
+    if (!Number.isInteger(id)) {
+      return res.status(400).send('Invalid student ID');
+    }
+  
+    db.query('DELETE FROM students WHERE id = ?', [id], (err, result) => {
+      if (err) {
+        console.error(err);
+        return res.status(500).send('Unable to delete student');
+      }
+      if (result.affectedRows === 0) {
+        return res.status(404).send('Student not found');
+      }
+      res.redirect('/');
+    });
+  });
+
 app.listen(3000, () => {
   console.log('Server running at http://localhost:3000');
 });

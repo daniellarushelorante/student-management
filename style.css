@@ -1,0 +1,27 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; background: #f1f3f5; color: #343a40; }
+
+.header { background: #1c5fb8; color: #fff; padding: 16px 24px; }
+.header h1 { margin: 0; font-size: 1.4rem; }
+
+.container { max-width: 1000px; margin: 24px auto; padding: 0 16px; }
+
+.toolbar { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+.toolbar form { display: flex; gap: 8px; flex: 1; }
+.toolbar input[type="text"] { flex: 1; padding: 8px 10px; border: 1px solid #adb5bd; border-radius: 4px; }
+
+.btn { background: #1c5fb8; color: #fff; border: 0; padding: 8px 14px; border-radius: 4px; text-decoration: none; cursor: pointer; font-size: 0.95rem; }
+.btn:hover { background: #164a91; }
+.btn-danger { background: #c92a2a; }
+.btn-danger:hover { background: #a61e1e; }
+
+.table-wrap { overflow-x: auto; background: #fff; border-radius: 6px; }
+table { width: 100%; border-collapse: collapse; }
+th { background: #495057; color: #fff; text-align: left; }
+th, td { padding: 10px 12px; border-bottom: 1px solid #dee2e6; }
+tr:hover td { background: #e7f0fb; }
+.empty { text-align: center; padding: 20px; color: #6c757d; }
+
+@media (max-width: 600px) {
+  .toolbar { flex-direction: column; }
+}
